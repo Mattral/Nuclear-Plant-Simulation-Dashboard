@@ -1,0 +1,144 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 195 31% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 217 71% 21%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 195 12% 74%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 195 10% 76%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 347 77% 61%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 217 71% 12%;
+    --sidebar-foreground: 195 31% 95%;
+    --sidebar-primary: 217 71% 21%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 195 70% 38%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 71% 15%;
+    --sidebar-ring: 195 70% 38%;
+  }
+ 
+  .dark {
+    --background: 217 71% 8%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 217 71% 12%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 217 71% 12%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 195 70% 38%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217 35% 20%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217 35% 25%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 347 77% 61%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217 32.6% 17.5%;
+    --input: 217 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 217 71% 15%;
+    --sidebar-foreground: 195 31% 95%;
+    --sidebar-primary: 195 70% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 35% 20%;
+    --sidebar-accent-foreground: 195 31% 95%;
+    --sidebar-border: 217 35% 25%;
+    --sidebar-ring: 195 70% 38%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom CSS for specialized dashboard elements */
+.gauge-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.gauge-progress {
+  transition: width 0.5s ease-out;
+}
+
+.glow-pulse {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(42, 157, 143, 0.8);
+  }
+}
+
+.react-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+/* Control rod visualization styles */
+.control-rod-container {
+  position: relative;
+  height: 150px;
+  width: 40px;
+  background: linear-gradient(to bottom, #555, #888);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.control-rod {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #EF476F, #C42348);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  transition: height 0.5s ease-out;
+}
